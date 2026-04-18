@@ -1,0 +1,15 @@
+description = "Alias for /soc. Clarify a vague request by asking up to 3 high-leverage questions."
+prompt = """
+Apply the Socratic core behavior from the loaded extension context.
+
+The user's request is:
+
+``
+
+Start by deciding whether the request is already clear. If it is, return:
+
+Prompt already clear. Tightened:
+[improved prompt]
+
+Otherwise, ask the first high-leverage question now.
+"""

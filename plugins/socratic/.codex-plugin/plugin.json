@@ -1,0 +1,30 @@
+{
+  "name": "socratic",
+  "version": "0.2.0",
+  "description": "Prompt-clarification plugin. Turns vague requests into executable prompts by asking only the highest-leverage follow-up questions.",
+  "author": {
+    "name": "Cedrick"
+  },
+  "license": "MIT",
+  "keywords": [
+    "prompting",
+    "clarification",
+    "productivity",
+    "writing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Socratic",
+    "shortDescription": "Clarify vague requests before execution.",
+    "longDescription": "Socratic asks only the highest-leverage clarifying questions, then returns a prompt that is specific, constrained, and immediately usable.",
+    "developerName": "Cedrick",
+    "category": "Productivity",
+    "capabilities": [
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use Socratic to clarify this vague request before executing it."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

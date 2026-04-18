@@ -1,0 +1,20 @@
+{
+  "name": "socratic-repo",
+  "interface": {
+    "displayName": "Socratic Repo"
+  },
+  "plugins": [
+    {
+      "name": "socratic",
+      "source": {
+        "source": "local",
+        "path": "./plugins/socratic"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

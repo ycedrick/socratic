@@ -1,0 +1,20 @@
+description = "Alias for /soc:lite. Clarify a vague request with at most 1 high-leverage question."
+prompt = """
+Apply the Socratic core behavior from the loaded extension context, but operate in lite mode.
+
+The user's request is:
+
+``
+
+Rules for this command:
+
+- ask at most 1 clarifying question
+- skip the question if the request is already clear enough
+
+If the request is already clear, return:
+
+Prompt already clear. Tightened:
+[improved prompt]
+
+Otherwise, ask the single highest-leverage question now.
+"""
