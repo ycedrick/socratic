@@ -1,5 +1,5 @@
 ---
-description: Clarify a vague request by asking up to 3 high-leverage questions, then return a tighter prompt.
+description: Default mode. Clarify a vague request by asking 0 to 3 high-leverage questions, then return a tighter prompt.
 argument-hint: [vague request]
 ---
 
@@ -17,6 +17,7 @@ $ARGUMENTS
 
 Rules:
 
+- This is `default` mode: ask 0 to 3 questions total.
 - Ask one question per turn.
 - Ask at most 3 questions total.
 - Stop early if the request is already clear enough.

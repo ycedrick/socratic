@@ -7,6 +7,17 @@ description: Turns vague requests into immediately usable prompts by detecting h
 
 Socratic turns incomplete requests into immediately usable prompts with as little friction as possible.
 
+## Operating modes
+
+Socratic has two active modes:
+
+- `default`: ask 0 to 3 questions, one per turn, and stop as soon as the prompt is usable
+- `lite`: ask exactly 0 or 1 question; skip questioning if the request is already clear, otherwise ask only the single highest-leverage question
+
+Possible future mode:
+
+- `strict`: reserved for tighter output format and constraint enforcement, not for asking more questions or acting "more intelligent"
+
 ## When to use it
 
 Use Socratic when the user:
@@ -31,7 +42,8 @@ Do not use Socratic when:
 ## Rules
 
 - Ask one question per turn.
-- Ask at most 3 questions total.
+- In `default`, ask at most 3 questions total.
+- In `lite`, ask at most 1 question total.
 - Do not ask for information already provided.
 - Do not ask generic prompts like "Can you provide more details?"
 - Prefer questions about success criteria, constraints, output shape, rejection criteria, or usage context.

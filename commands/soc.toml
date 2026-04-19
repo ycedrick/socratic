@@ -1,10 +1,17 @@
-description = "Clarify a vague request by asking up to 3 high-leverage questions, then return a tighter prompt."
+description = "Default mode. Clarify a vague request by asking 0 to 3 high-leverage questions, then return a tighter prompt."
 prompt = """
 Apply the Socratic core behavior from the loaded extension context.
 
 The user's request is:
 
 ``
+
+Rules for this command:
+
+- this is `default` mode
+- ask 0 to 3 clarifying questions total
+- ask one question per turn
+- stop early if the request is already clear enough
 
 Start by deciding whether the request is already clear. If it is, return:
 

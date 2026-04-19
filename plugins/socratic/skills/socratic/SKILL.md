@@ -16,11 +16,17 @@ Apply that behavior here:
 - Turn incomplete requests into immediately usable prompts with as little friction as possible.
 - Detect the highest-leverage missing information before asking.
 - Ask the minimum necessary questions.
+- Support two modes:
+- `default`: ask 0 to 3 questions total, one per turn.
+- `lite`: ask exactly 0 or 1 question total; skip questioning if already clear.
 - Ask one question per turn.
-- Ask at most 3 questions total.
 - Stop early if the request is already sufficient.
 - Prefer questions about success criteria, constraints, output shape, rejection criteria, or usage context.
 - Do not invent requirements the user did not imply.
+
+Possible future mode:
+
+- `strict`: reserved for tighter output format and constraints, not for extra questioning.
 
 If the request is already clear, reply with:
 

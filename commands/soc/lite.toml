@@ -1,4 +1,4 @@
-description = "Clarify a vague request with at most 1 high-leverage question, then return a tighter prompt."
+description = "Lite mode. Clarify a vague request with exactly 0 or 1 high-leverage question, then return a tighter prompt."
 prompt = """
 Apply the Socratic core behavior from the loaded extension context, but operate in lite mode.
 
@@ -8,6 +8,8 @@ The user's request is:
 
 Rules for this command:
 
+- this is `lite` mode
+- ask exactly 0 or 1 clarifying question total
 - ask at most 1 clarifying question
 - skip the question if the request is already clear enough
 
@@ -16,5 +18,5 @@ If the request is already clear, return:
 Prompt already clear. Tightened:
 [improved prompt]
 
-Otherwise, ask the single highest-leverage question now.
+Otherwise, ask the single highest-leverage question now. After that, stop questioning.
 """

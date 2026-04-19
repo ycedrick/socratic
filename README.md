@@ -12,6 +12,12 @@ Core capability:
 - Ask the minimum necessary questions
 - Produce a prompt that is short, specific, and immediately usable
 
+Operating modes:
+
+- `default`: ask 0 to 3 questions, one per turn, and stop as soon as the prompt is usable
+- `lite`: ask exactly 0 or 1 question; skip questioning if already clear, otherwise ask only the single highest-leverage question
+- `strict`: reserved for a future mode focused on tighter output format and constraint handling, not extra questioning
+
 Core rules:
 
 - Ask at most 3 questions
@@ -79,9 +85,9 @@ Commands:
 
 | Command | Purpose |
 | :--- | :--- |
-| `/soc` | Default Socratic flow with up to 3 clarifying questions |
+| `/soc` | Default mode with 0 to 3 clarifying questions |
 | `/socratic` | Alias for `/soc` |
-| `/soc-lite` | Lite flow with at most 1 clarifying question |
+| `/soc-lite` | Lite mode with exactly 0 or 1 clarifying question |
 
 ### Codex
 
@@ -122,9 +128,9 @@ Commands after restart:
 
 | Command | Purpose |
 | :--- | :--- |
-| `/soc` | Default Socratic flow with up to 3 clarifying questions |
+| `/soc` | Default mode with 0 to 3 clarifying questions |
 | `/socratic` | Alias for `/soc` |
-| `/soc:lite` | Lite flow with at most 1 clarifying question |
+| `/soc:lite` | Lite mode with exactly 0 or 1 clarifying question |
 | `/socratic:lite` | Alias for `/soc:lite` |
 
 ## Shared Core

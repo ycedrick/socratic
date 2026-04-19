@@ -1,5 +1,5 @@
 ---
-description: Clarify a vague request with at most 1 high-leverage question, then return a tighter prompt.
+description: Lite mode. Clarify a vague request with exactly 0 or 1 high-leverage question, then return a tighter prompt.
 argument-hint: [mostly-complete request]
 ---
 
@@ -17,6 +17,7 @@ $ARGUMENTS
 
 Rules:
 
+- This is `lite` mode: ask exactly 0 or 1 question total.
 - Ask at most 1 clarifying question.
 - Skip the question if the request is already clear enough.
 - Do not ask for information already provided.
@@ -29,4 +30,4 @@ If the request is already clear, reply with exactly:
 Prompt already clear. Tightened:
 [improved prompt]
 
-If a question is needed, ask only the single highest-leverage question.
+If a question is needed, ask only the single highest-leverage question, then stop and produce the final prompt on the next turn.
