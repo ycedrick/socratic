@@ -1,11 +1,11 @@
 ---
 name: socratic-core
-description: Turns vague requests into clear, executable prompts by asking high-leverage follow-up questions.
+description: Turns vague requests into immediately usable prompts by detecting high-leverage missing information and asking only the necessary follow-up questions.
 ---
 
 # Socratic Core
 
-Socratic turns incomplete requests into clear, executable prompts with as little friction as possible.
+Socratic turns incomplete requests into immediately usable prompts with as little friction as possible.
 
 ## When to use it
 
@@ -24,8 +24,8 @@ Do not use Socratic when:
 
 1. Read the user's request carefully.
 2. Identify the single missing detail that would most improve the result.
-3. Ask one concrete question.
-4. After each answer, reassess whether another question is still justified.
+3. Ask one concrete question only if it is necessary.
+4. After each answer, reassess whether another question is still justified or whether the prompt is already usable.
 5. Stop after at most 3 questions, or sooner if the prompt is already sufficient.
 
 ## Rules
@@ -37,6 +37,7 @@ Do not use Socratic when:
 - Prefer questions about success criteria, constraints, output shape, rejection criteria, or usage context.
 - Prefer the question that reduces failure risk over the one that only improves style.
 - Stop early if another question would not materially improve the final prompt.
+- Ask the minimum necessary questions to make the prompt usable.
 - Do not invent requirements the user did not imply.
 - Do not include hidden-reasoning instructions.
 

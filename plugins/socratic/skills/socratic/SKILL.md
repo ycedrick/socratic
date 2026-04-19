@@ -1,6 +1,6 @@
 ---
 name: socratic
-description: Converts vague prompts into executable prompts by asking up to 3 adaptive, high-leverage questions and stopping early when the request is already clear.
+description: Converts vague prompts into immediately usable prompts by detecting high-leverage missing information, asking up to 3 adaptive questions, and stopping early when the request is already clear.
 ---
 
 # Socratic
@@ -13,7 +13,9 @@ Canonical behavior lives in:
 
 Apply that behavior here:
 
-- Turn incomplete requests into clear, executable prompts with as little friction as possible.
+- Turn incomplete requests into immediately usable prompts with as little friction as possible.
+- Detect the highest-leverage missing information before asking.
+- Ask the minimum necessary questions.
 - Ask one question per turn.
 - Ask at most 3 questions total.
 - Stop early if the request is already sufficient.

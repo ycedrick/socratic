@@ -1,10 +1,16 @@
 # Socratic
 
-Socratic turns vague requests into executable prompts by asking only the highest-leverage follow-up questions, then stopping as soon as the prompt is good enough.
+Socratic turns vague requests into immediately usable prompts by detecting the missing information that matters most, asking the minimum necessary questions, and stopping as soon as the prompt is ready to run.
 
 ## Behavior
 
 Socratic is intentionally not always-on. It is a manual clarification tool.
+
+Core capability:
+
+- Detect the highest-leverage missing information
+- Ask the minimum necessary questions
+- Produce a prompt that is short, specific, and immediately usable
 
 Core rules:
 
