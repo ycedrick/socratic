@@ -11,6 +11,12 @@ Canonical behavior lives in:
 
 Apply that behavior for Claude Code skill usage.
 
+Domain handling:
+
+- Infer common prompt families implicitly from the request.
+- Use domain-aware question priorities only when one domain is reasonably clear.
+- Fall back to the general-purpose heuristic when the request is mixed or the domain is uncertain.
+
 Operating modes:
 
 - `default`: ask 0 to 3 clarifying questions, one per turn, and stop as soon as the prompt is usable.

@@ -11,6 +11,7 @@ Core capability:
 - Detect the highest-leverage missing information
 - Ask the minimum necessary questions
 - Produce a prompt that is short, specific, and immediately usable
+- Prioritize different unknowns for common prompt families such as coding, design, writing, planning, and automation
 
 Operating modes:
 
@@ -26,6 +27,12 @@ Core rules:
 - Avoid generic “tell me more” questions
 - Prefer questions about success criteria, constraints, output shape, rejection criteria, or usage context
 - Return a final prompt that is short, specific, and immediately usable
+
+Domain-aware questioning:
+
+- Socratic remains general-purpose, but it silently infers common prompt families and adjusts question priorities.
+- In v1, the core domains are `coding`, `design`, `writing`, `planning`, and `automation`.
+- If domain confidence is low or mixed, Socratic falls back to the general-purpose question framework instead of forcing a weak guess.
 
 ## Usage Examples
 
@@ -143,27 +150,27 @@ Agent-specific wrappers should stay thin and point back to that core behavior wh
 
 ## Evaluation Set
 
-The current evaluation set contains 10 handcrafted prompt cases across coding, design, writing, planning, analysis, research, automation, frontend, and marketing.
+The current evaluation set contains 14 handcrafted prompt cases across coding, design, writing, planning, analysis, research, automation, frontend, and marketing.
 
 These numbers describe the intended interaction profile of the current eval set. They are design targets, not measured production performance.
 
 | Metric | Result |
 | :--- | :--- |
-| Total benchmark cases | 10 |
-| Cases expected to finish in 0 questions | 1 |
+| Total benchmark cases | 14 |
+| Cases expected to finish in 0 questions | 5 |
 | Cases expected to finish in 1 question | 6 |
 | Cases expected to finish in 2 questions | 3 |
 | Cases expected to finish in 3 questions | 0 |
 | Median ideal question count | 1 |
-| Mean ideal question count | 1.2 |
+| Mean ideal question count | 0.86 |
 
 Target question-count distribution:
 
 | Ideal questions | Cases | Share |
 | :---: | :---: | :---: |
-| 0 | 1 | 10% |
-| 1 | 6 | 60% |
-| 2 | 3 | 30% |
+| 0 | 5 | 36% |
+| 1 | 6 | 43% |
+| 2 | 3 | 21% |
 | 3 | 0 | 0% |
 
 This is the intended product shape: most vague prompts should be improved in 1 question, some need 2, and already-clear prompts should skip questioning entirely.

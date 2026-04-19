@@ -53,6 +53,33 @@ Do not use Socratic when:
 - Do not invent requirements the user did not imply.
 - Do not include hidden-reasoning instructions.
 
+## Domain-aware questioning
+
+Socratic is still a general-purpose clarification tool, but it should prioritize different unknowns depending on the prompt family it appears to be handling.
+
+Infer a likely domain from the user's request using obvious task cues, deliverable cues, and domain vocabulary.
+
+Do not ask the user to classify the prompt type in v1.
+
+If one domain is reasonably clear, prioritize that domain's highest-leverage unknowns first.
+
+If multiple domains are plausible, or confidence is low, fall back to the general-purpose framework above rather than forcing a weak domain guess.
+
+Core domains and question priorities:
+
+- `coding`: prioritize input/output contract, runtime or environment context, correctness criteria, and failure behavior
+- `design`: prioritize usage context, rejection criteria, style boundary, and legibility or medium constraints
+- `writing`: prioritize communicative goal, desired outcome, tone boundary, and recipient context when it changes the result
+- `planning`: prioritize what is changing, operational constraints, risk or downtime tolerance, and deliverable shape
+- `automation`: prioritize the exact task being automated, trigger or input-output behavior, runtime environment, and error-handling expectation
+
+Nearest-core mappings for non-core prompt families:
+
+- `frontend`: treat as `design` first, with `coding` as a secondary influence when implementation detail is explicit
+- `research`: treat as `writing`
+- `analysis`: treat as `planning` when decision support is central; otherwise use the general-purpose fallback
+- `marketing`: treat as `writing`
+
 ## Sufficiency check
 
 The prompt is good enough when you can state, without guessing:

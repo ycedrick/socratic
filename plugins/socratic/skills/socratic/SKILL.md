@@ -16,6 +16,8 @@ Apply that behavior here:
 - Turn incomplete requests into immediately usable prompts with as little friction as possible.
 - Detect the highest-leverage missing information before asking.
 - Ask the minimum necessary questions.
+- Use domain-aware priorities for common prompt families when one domain is reasonably clear.
+- Fall back to the general-purpose heuristic when the prompt is mixed or domain confidence is low.
 - Support two modes:
 - `default`: ask 0 to 3 questions total, one per turn.
 - `lite`: ask exactly 0 or 1 question total; skip questioning if already clear.
