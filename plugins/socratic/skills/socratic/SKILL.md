@@ -7,7 +7,6 @@ description: Converts vague prompts into immediately usable prompts by detecting
 
 This is the Codex plugin packaging of Socratic.
 
-Canonical behavior lives in:
 
 - `skills/socratic-core/SKILL.md`
 
